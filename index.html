@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculateur Cambiste</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 250px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .achat button { background: #2ecc71; } /* vert */
+    .vente button { background: #e74c3c; } /* rouge */
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Bloc Achat -->
+    <div class="box achat">
+      <h2>Achat</h2>
+      <input type="number" id="montantAchat" placeholder="Montant en devise">
+      <input type="number" id="tauxAchat" placeholder="Taux d'achat (GNF)">
+      <button onclick="calculerAchat()">Calculer</button>
+      <div class="result" id="resultAchat"></div>
+    </div>
+
+    <!-- Bloc Vente -->
+    <div class="box vente">
+      <h2>Vente</h2>
+      <input type="number" id="montantVente" placeholder="Montant en devise">
+      <input type="number" id="tauxVente" placeholder="Taux de vente (GNF)">
+      <button onclick="calculerVente()">Calculer</button>
+      <div class="result" id="resultVente"></div>
+    </div>
+  </div>
+
+  <script>
+    function calculerAchat() {
+      const montant = document.getElementById('montantAchat').value;
+      const taux = document.getElementById('tauxAchat').value;
+      if (montant && taux) {
+        document.getElementById('resultAchat').innerText =
+          "Total : " + (montant * taux).toLocaleString() + " GNF";
+      }
+    }
+
+    function calculerVente() {
+      const montant = document.getElementById('montantVente').value;
+      const taux = document.getElementById('tauxVente').value;
+      if (montant && taux) {
+        document.getElementById('resultVente').innerText =
+          "Total : " + (montant * taux).toLocaleString() + " GNF";
+      }
+    }
+  </script>
+</body>
+</html>
