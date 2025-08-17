@@ -12,46 +12,50 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100svh;
     }
     .container {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 80px;
     }
     .box {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 80px;
+      border-radius: 32px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 800px;
+      width: 680px;
     }
     h2 {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 60px;
+      font-size: 32px;
     }
     input {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
+      padding: 32px;
+      margin: 32px 0;
+      border-radius: 20px;
       border: 1px solid #ccc;
+      font-size: 18px; /* ✅ supérieur à 16px */
     }
     button {
       width: 100%;
-      padding: 10px;
+      padding: 32px;
       border: none;
-      border-radius: 8px;
+      border-radius: 20px;
       color: white;
-      font-size: 16px;
+      font-size: 20px;
       cursor: pointer;
+      margin-top: 20px;
     }
     .achat button { background: #2ecc71; } /* vert */
     .vente button { background: #e74c3c; } /* rouge */
     .result {
-      margin-top: 10px;
+      margin-top: 30px;
       font-weight: bold;
       text-align: center;
+      font-size: 24px;
     }
   </style>
 </head>
